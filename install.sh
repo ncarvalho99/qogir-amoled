@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
-# Qogir AMOLED installer for KDE Plasma 6 (user install, no root needed).
+# Qogir AMOLED installer for KDE Plasma 6. Installs to your home directory;
+# only --login needs sudo.
 #
 #   ./install.sh              install everything
 #   ./install.sh --apply      install and switch the desktop to Qogir AMOLED
 #   ./install.sh --no-icons   skip the Qogir icon/cursor theme download
+#   ./install.sh --login      also theme the login screen (asks for sudo)
 #   ./install.sh --uninstall  remove everything this script installed
+#                             (add --login to also restore the login screen)
 
 set -euo pipefail
 
@@ -13,6 +16,8 @@ NAME=Qogir-amoled
 GTK_NAME=Qogir-Amoled
 GTK_THEME=$GTK_NAME-Dark
 LNF_ID=com.github.ncarvalho99.Qogir-amoled
+CLOCK_ID=org.kde.plasma.splitdigitalclock
+PANEL_ID=com.github.ncarvalho99.QogirAmoledPanel
 ICONS_REPO=https://github.com/vinceliuice/Qogir-icon-theme
 
 DATA=${XDG_DATA_HOME:-$HOME/.local/share}
@@ -22,16 +27,18 @@ ICONS_DIR=$DATA/icons
 
 apply=false
 icons=true
+login=false
 uninstall=false
 
 usage() {
-  sed -n '2,8p' "$0" | sed 's/^# \{0,1\}//'
+  sed -n '2,10p' "$0" | sed 's/^# \{0,1\}//'
 }
 
 while [[ $# -gt 0 ]]; do
   case $1 in
     --apply) apply=true ;;
     --no-icons) icons=false ;;
+    --login) login=true ;;
     -u|--uninstall) uninstall=true ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown option: $1"; usage; exit 1 ;;
@@ -79,9 +86,11 @@ do_uninstall() {
          "$DATA/aurorae/themes/$NAME" "$DATA/aurorae/themes/$NAME-circle" \
          "$DATA/color-schemes/QogirAmoled.colors" \
          "$DATA/wallpapers/$NAME" \
+         "$DATA/plasma/plasmoids/$CLOCK_ID" "$DATA/plasma/layout-templates/$PANEL_ID" \
          "$CONFIG/Kvantum/$NAME" "$CONFIG/Kvantum/$NAME-translucent" \
          "$THEMES_DIR/$GTK_NAME"{,-Light,-Dark}{,-hdpi,-xhdpi}
   remove_gtk4_css
+  $login && sudo "$SRC_DIR/login/install-login.sh" --uninstall
   echo "Done. The Qogir icon/cursor theme in $ICONS_DIR was left in place."
 }
 
@@ -96,6 +105,11 @@ install_kde() {
   cp -r "$SRC_DIR/kde/plasma/look-and-feel/$LNF_ID" "$DATA/plasma/look-and-feel/"
   cp -r "$SRC_DIR/kde/aurorae/themes/$NAME" "$SRC_DIR/kde/aurorae/themes/$NAME-circle" "$DATA/aurorae/themes/"
   cp -r "$SRC_DIR/kde/wallpaper/$NAME" "$DATA/wallpapers/"
+  echo "==> Plasma: split clock widget and Qogir top panel template"
+  mkdir -p "$DATA/plasma/plasmoids" "$DATA/plasma/layout-templates"
+  rm -rf "$DATA/plasma/plasmoids/$CLOCK_ID" "$DATA/plasma/layout-templates/$PANEL_ID"
+  cp -r "$SRC_DIR/plasma/plasmoids/$CLOCK_ID" "$DATA/plasma/plasmoids/"
+  cp -r "$SRC_DIR/plasma/layout-templates/$PANEL_ID" "$DATA/plasma/layout-templates/"
   echo "==> Kvantum"
   cp -r "$SRC_DIR/kde/Kvantum/$NAME" "$SRC_DIR/kde/Kvantum/$NAME-translucent" "$CONFIG/Kvantum/"
 }
@@ -122,6 +136,15 @@ install_icons() {
   mkdir -p "$ICONS_DIR"
   (cd "$tmp/icons" && ./install.sh -c all -t default -d "$ICONS_DIR" >/dev/null)
   rm -rf "$tmp"
+}
+
+install_login() {
+  if [[ ! -d $ICONS_DIR/Qogir-Dark ]]; then
+    echo "The login screen needs the Qogir icons; run without --no-icons first."
+    exit 1
+  fi
+  echo "==> Login screen (needs sudo)"
+  sudo "$SRC_DIR/login/install-login.sh" "$ICONS_DIR"
 }
 
 check_deps() {
@@ -166,6 +189,7 @@ fi
 install_kde
 install_gtk
 $icons && install_icons
+$login && install_login
 check_deps
 $apply && apply_theme
 

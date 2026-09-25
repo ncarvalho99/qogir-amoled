@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name=""/>
+  <group name="Appearance">
+    <entry name="showSeconds" type="Bool"><default>false</default></entry>
+    <entry name="showDate" type="Bool"><default>true</default></entry>
+    <entry name="showSeparator" type="Bool"><default>true</default></entry>
+    <!-- shortDate, longDate, isoDate or custom -->
+    <entry name="dateFormat" type="String"><default>shortDate</default></entry>
+    <entry name="customDateFormat" type="String"><default>ddd d</default></entry>
+    <!-- 0: 12-hour, 1: follow locale, 2: 24-hour -->
+    <entry name="use24hFormat" type="Int"><default>1</default></entry>
+    <entry name="fontFamily" type="String"><default></default></entry>
+    <entry name="boldText" type="Bool"><default>false</default></entry>
+    <entry name="italicText" type="Bool"><default>false</default></entry>
+    <entry name="backgroundColorCheckBox" type="Bool"><default>false</default></entry>
+    <entry name="backgroundColor" type="String"><default>#ffffff</default></entry>
+    <entry name="showWeekNumbers" type="Bool"><default>false</default></entry>
+  </group>
+</kcfg>

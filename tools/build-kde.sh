@@ -107,11 +107,21 @@ sed -i -e "s/\"Id\": \"Qogir-dark\"/\"Id\": \"$NAME\"/" -e "s/\"Name\": \"Qogir-
   "$OUT/wallpaper/$NAME/metadata.json"
 rm -f "$OUT/wallpaper/$NAME/metadata.desktop"
 
+# --- SDDM login theme (for systems that use SDDM instead of Plasma Login) -----
+SDDM=$OUT/sddm/$NAME
+mkdir -p "$OUT/sddm"
+cp -r "$UP/sddm/Qogir" "$SDDM"
+cp "$UP/wallpaper/Qogir-dark/contents/images/1920x1080.jpg" "$SDDM/background.jpg"
+sed -i -e 's/^Name=.*/Name=Qogir AMOLED/' -e 's/^Theme-Id=.*/Theme-Id=qogir-amoled/' "$SDDM/metadata.desktop"
+python3 "$AMOLEDIFY" "$SDDM"
+
 # --- Global theme -----------------------------------------------------------
-# The upstream panel layout is left out on purpose: it would replace the
-# user's panels and still points at a Plasma 5 wallpaper.
+# Upstream's layout is replaced by plasma/desktop-layout.js, which loads the
+# Qogir top panel template (upstream's serialized layout is Plasma 5 only).
+# Plasma only runs it when "Desktop and window layout" is ticked.
 LNF=$OUT/plasma/look-and-feel/$LNF_ID
-mkdir -p "$LNF/contents"
+mkdir -p "$LNF/contents/layouts"
+cp "$ROOT/plasma/desktop-layout.js" "$LNF/contents/layouts/org.kde.plasma.desktop-layout.js"
 cp -r "$UP/plasma/look-and-feel/com.github.vinceliuice.Qogir-dark/contents/"{previews,splash} "$LNF/contents/"
 python3 "$AMOLEDIFY" "$LNF/contents/splash"
 cat > "$LNF/metadata.json" <<EOF

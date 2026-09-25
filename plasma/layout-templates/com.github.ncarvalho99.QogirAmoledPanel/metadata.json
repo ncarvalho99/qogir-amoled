@@ -1,0 +1,16 @@
+{
+    "KPackageStructure": "Plasma/LayoutTemplate",
+    "KPlugin": {
+        "Authors": [
+            { "Name": "Vince Liuice", "Email": "vinceliuice@hotmail.com" },
+            { "Name": "ncarvalho99" }
+        ],
+        "Description": "Qogir's top bar: launcher, global menu, system tray, split clock and search",
+        "Id": "com.github.ncarvalho99.QogirAmoledPanel",
+        "License": "GPL-3.0",
+        "Name": "Qogir AMOLED Top Panel",
+        "Version": "1.0"
+    },
+    "X-Plasma-ContainmentCategories": ["panel"],
+    "X-Plasma-Shell": "plasmashell"
+}

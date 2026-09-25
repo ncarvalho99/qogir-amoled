@@ -18,6 +18,9 @@ It continues [ncarvalho99/qogir-black](https://github.com/ncarvalho99/qogir-blac
 | Application style | Kvantum `Qogir-amoled` | Opaque black. `Qogir-amoled-translucent` keeps upstream's blur. |
 | GTK theme | `Qogir-Amoled-Dark` | GTK 2, 3, 4 and libadwaita apps. |
 | Icons and cursors | `Qogir-Dark` | Downloaded from upstream [Qogir-icon-theme](https://github.com/vinceliuice/Qogir-icon-theme). |
+| Top panel | Qogir AMOLED Top Panel | Qogir's top bar: launcher, global menu, tray, split clock, search. Add it from *Add Panel*, or tick *Desktop and window layout* when applying the global theme (that replaces your panels). |
+| Clock widget | Split Digital Clock | Plasma 6 rewrite of Qogir's date \| time clock, with the Plasma calendar in its popup. |
+| Login screen | Qogir AMOLED | Plasma Login Manager or SDDM, with `--login`. |
 
 ## Install
 
@@ -29,13 +32,14 @@ cd qogir-amoled
 ./install.sh --apply
 ```
 
-Everything goes into your home directory; no root needed.
+Everything goes into your home directory; only `--login` needs root.
 
 | Option | What it does |
 |---|---|
 | `--apply` | Switch the desktop to Qogir AMOLED (global theme, Kvantum, GTK, Flatpak override). |
 | `--no-icons` | Don't download the Qogir icon/cursor theme. |
-| `--uninstall` | Remove everything the installer added. |
+| `--login` | Also theme the login screen (asks for sudo). |
+| `--uninstall` | Remove everything the installer added. With `--login`, also restores the previous login screen. |
 
 Without `--apply`, pick it later in *System Settings → Colors & Themes → Global Theme → Qogir AMOLED*.
 
@@ -58,10 +62,17 @@ Accent colors, text and borders are left untouched.
 - Plasma 6 metadata (`metadata.json` with `KPackageStructure`) for the Plasma style and window decorations, so they show up in System Settings.
 - Fixed Plasma SVGs that shipped a second stylesheet with hard-coded Breeze light colors, which made popups (e.g. the app launcher) render light grey on dark themes.
 - The Kvantum style is opaque by default; translucency turned the black into grey.
-- The global theme doesn't ship a panel layout, so applying it won't replace your panels.
+- The desktop layout is a Plasma 6 script that loads the top panel template; upstream's serialized layout and its Plasma 5 wallpaper path are gone. The panel is also available on its own from *Add Panel*.
+- The split clock was rewritten for Plasma 6 (upstream's is Plasma 5 only). Multiple time zones were dropped; use Plasma's Digital Clock for those.
 - GTK 4 / libadwaita theming imports the theme from `~/.config/gtk-4.0/gtk.css` instead of symlinking over the file Plasma manages.
 
-Not ported: the SDDM login theme (needs root and a Qt 6 port) and the Plasma 5-only plasmoids.
+## Login screen
+
+Plasma 6 distributions increasingly ship **Plasma Login Manager** instead of SDDM. It has no themes of its own: the greeter runs as the `plasmalogin` user and uses that user's color scheme, Plasma style, icons and cursor, plus a wallpaper set in `/etc/plasmalogin.conf`. `--login` installs those pieces to `/usr/local/share`, points the greeter at them, and keeps a backup in `/var/lib/qogir-amoled/login-backup` for `--uninstall --login`.
+
+On SDDM systems `--login` installs Qogir's SDDM theme (Qt 6) as `Qogir-amoled` and selects it in `/etc/sddm.conf.d/qogir-amoled.conf`. The SDDM path has not been tested on real hardware yet.
+
+Not ported: upstream's `win7showdesktop` plasmoid (Plasma 5 only; Plasma 6 ships *Peek at Desktop*).
 
 ## Rebuilding from upstream
 
@@ -93,4 +104,4 @@ Qogir is by [Vince Liuice](https://github.com/vinceliuice). This project is GPL-
 
 Edição preta total (AMOLED) do tema Qogir para o **KDE Plasma 6**, com os temas GTK 2/3/4 e libadwaita combinando. Continua os repositórios `qogir-black` e `Qogir-theme` de 2022–2023, que deixavam o Qogir GTK preto mas eram anteriores ao Plasma 6 e não tinham a parte do KDE.
 
-Para instalar: `./install.sh --apply`. Não precisa de root. Para remover: `./install.sh --uninstall`.
+Para instalar: `./install.sh --apply`. Para incluir a tela de login: `./install.sh --apply --login` (pede sudo). Para remover: `./install.sh --uninstall` (com `--login`, restaura a tela de login anterior).
