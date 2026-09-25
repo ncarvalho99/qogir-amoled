@@ -16,6 +16,12 @@ $_dot_position: $_strip_width + 4px; // matches upstream's GTK 3 layout
 // enough to read as a separate column.
 $_strip_bg: if($variant == 'dark', #101010, $dark_sidebar_icon_bg);
 
+// The selected place is marked in neutral grey on AMOLED (the folder grey of
+// the Tela black icon theme) instead of Qogir's blue.
+$_mark: if($variant == 'dark', #4d4d4d, $selected_bg_color);
+$_mark_edge: lighten($_mark, 10%);
+$_dot: if($variant == 'dark', 'selected-dot-amoled', 'selected-dot');
+
 .nautilus-window {
   .sidebar-pane > toolbarview {
     background-image: image($_strip_bg);
@@ -63,15 +69,15 @@ $_strip_bg: if($variant == 'dark', #101010, $dark_sidebar_icon_bg);
       &:hover:not(:selected) {
         color: $fg_color;
         background-color: transparentize($dark_sidebar_fg, 0.95);
-        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+        box-shadow: inset -2px 0 $_mark_edge,
                     inset $_strip_width 0 0 0 $_strip_bg;
       }
 
       &:selected, &:selected:hover, &:active:hover {
         background-color: transparent;
-        background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
+        background-image: -gtk-scaled(url("assets/#{$_dot}.png"), url("assets/#{$_dot}@2.png"));
         background-position: $_dot_position center;
-        box-shadow: inset $_strip_width 0 0 0 $selected_bg_color;
+        box-shadow: inset $_strip_width 0 0 0 $_mark;
 
         > revealer > box {
           > image:first-child { color: $selected_fg_color; }
@@ -81,8 +87,8 @@ $_strip_bg: if($variant == 'dark', #101010, $dark_sidebar_icon_bg);
 
       &:selected:hover, &:active:hover {
         background-color: transparentize($dark_sidebar_fg, 0.95);
-        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
-                    inset $_strip_width 0 0 0 $selected_bg_color;
+        box-shadow: inset -2px 0 $_mark_edge,
+                    inset $_strip_width 0 0 0 $_mark;
       }
 
       &:disabled {
@@ -93,14 +99,4 @@ $_strip_bg: if($variant == 'dark', #101010, $dark_sidebar_icon_bg);
     }
   }
 
-  // Qogir's mountains in the corner of the icon view. The upstream dark image
-  // has an opaque #282a33 background, so the AMOLED variant ships its own with
-  // a transparent one.
-  .nautilus-grid-view gridview {
-    background-image: if($variant == 'dark',
-      -gtk-scaled(url("assets/backimage-amoled.png"), url("assets/backimage-amoled@2.png")),
-      -gtk-scaled(url("assets/backimage.png"), url("assets/backimage@2.png")));
-    background-repeat: no-repeat;
-    background-position: bottom right;
-  }
 }

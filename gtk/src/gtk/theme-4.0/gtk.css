@@ -8870,9 +8870,3 @@ dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitb
 .nautilus-window placessidebar list.navigation-sidebar > row:backdrop {
   opacity: 0.75;
 }
-
-.nautilus-window .nautilus-grid-view gridview {
-  background-image: -gtk-scaled(url("assets/backimage.png"), url("assets/backimage@2.png"));
-  background-repeat: no-repeat;
-  background-position: bottom right;
-}

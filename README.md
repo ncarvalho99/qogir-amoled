@@ -17,7 +17,7 @@ It continues [ncarvalho99/qogir-black](https://github.com/ncarvalho99/qogir-blac
 | Plasma style | Qogir AMOLED | Panel, popups and widgets follow the color scheme. |
 | Window decorations | Qogir AMOLED, Qogir AMOLED (circle) | Aurorae, Plasma 6 metadata included. |
 | Application style | Kvantum `Qogir-amoled` | Opaque black. `Qogir-amoled-translucent` keeps upstream's blur. |
-| GTK theme | `Qogir-Amoled-Dark` | GTK 2, 3, 4 and libadwaita apps. Includes Qogir's Nautilus look (see below). |
+| GTK theme | `Qogir-Amoled-Dark` | GTK 2, 3, 4 and libadwaita apps. Includes Qogir's Nautilus sidebar (see below). |
 | Icons and cursors | `Qogir-Dark` | Downloaded from upstream [Qogir-icon-theme](https://github.com/vinceliuice/Qogir-icon-theme). |
 | Top panel | Qogir AMOLED Top Panel | Qogir's top bar: launcher, global menu, tray, split clock, search. Add it from *Add Panel*, or tick *Desktop and window layout* when applying the global theme (that replaces your panels). |
 | Clock widget | Split Digital Clock | Plasma 6 rewrite of Qogir's date \| time clock, with the Plasma calendar in its popup. |
@@ -69,9 +69,9 @@ Accent colors, text and borders are left untouched.
 
 ## Nautilus
 
-Qogir's signature file manager look (the dark icon strip down the sidebar, the blue square and dot on the selected place, the mountain logo, the mountains in the corner of the view) was written for Nautilus' old sidebar and stopped applying when Nautilus rebuilt it as a plain list. [`gtk-amoled/_nautilus.scss`](gtk-amoled/_nautilus.scss) restores it for Nautilus 48+, and the corner mountains get an AMOLED version with a transparent background (upstream's dark one is an opaque `#282a33` block).
+Qogir's signature file manager look (the dark icon strip down the sidebar, the square and dot marking the selected place, the mountain logo in the header) was written for Nautilus' old sidebar and stopped applying when Nautilus rebuilt it as a plain list. [`gtk-amoled/_nautilus.scss`](gtk-amoled/_nautilus.scss) restores it for Nautilus 48+, AMOLED style: the selected place is marked in neutral grey (`#4d4d4d`, the folder grey of the Tela black icons) instead of blue, and the file view stays pure black with no background image.
 
-Dolphin can't be styled this way: Qt styles like Kvantum have no hook for a sidebar icon column or a view background image.
+Dolphin can't be styled this way: Qt styles like Kvantum have no hook for a sidebar icon column.
 
 ## Login screen
 

@@ -8798,14 +8798,14 @@ dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitb
 .nautilus-window placessidebar list.navigation-sidebar > row:hover:not(:selected) {
   color: #e6ebef;
   background-color: rgba(216, 222, 223, 0.05);
-  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #101010;
+  box-shadow: inset -2px 0 #676767, inset 38px 0 0 0 #101010;
 }
 
 .nautilus-window placessidebar list.navigation-sidebar > row:selected, .nautilus-window placessidebar list.navigation-sidebar > row:selected:hover, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover {
   background-color: transparent;
-  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
+  background-image: -gtk-scaled(url("assets/selected-dot-amoled.png"), url("assets/selected-dot-amoled@2.png"));
   background-position: 42px center;
-  box-shadow: inset 38px 0 0 0 #5294e2;
+  box-shadow: inset 38px 0 0 0 #4d4d4d;
 }
 
 .nautilus-window placessidebar list.navigation-sidebar > row:selected > revealer > box > image:first-child, .nautilus-window placessidebar list.navigation-sidebar > row:selected:hover > revealer > box > image:first-child, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover > revealer > box > image:first-child {
@@ -8818,7 +8818,7 @@ dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitb
 
 .nautilus-window placessidebar list.navigation-sidebar > row:selected:hover, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover {
   background-color: rgba(216, 222, 223, 0.05);
-  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #5294e2;
+  box-shadow: inset -2px 0 #676767, inset 38px 0 0 0 #4d4d4d;
 }
 
 .nautilus-window placessidebar list.navigation-sidebar > row:disabled, .nautilus-window placessidebar list.navigation-sidebar > row:disabled label, .nautilus-window placessidebar list.navigation-sidebar > row:disabled image {
@@ -8827,10 +8827,4 @@ dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitb
 
 .nautilus-window placessidebar list.navigation-sidebar > row:backdrop {
   opacity: 0.75;
-}
-
-.nautilus-window .nautilus-grid-view gridview {
-  background-image: -gtk-scaled(url("assets/backimage-amoled.png"), url("assets/backimage-amoled@2.png"));
-  background-repeat: no-repeat;
-  background-position: bottom right;
 }
