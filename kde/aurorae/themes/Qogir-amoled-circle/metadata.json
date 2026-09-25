@@ -1,0 +1,14 @@
+{
+    "KPackageStructure": "KWin/Aurorae",
+    "KPlugin": {
+        "Authors": [
+            { "Name": "Vince Liuice", "Email": "vinceliuice@hotmail.com" },
+            { "Name": "ncarvalho99" }
+        ],
+        "EnabledByDefault": true,
+        "Id": "Qogir-amoled-circle",
+        "License": "GPLv3",
+        "Name": "Qogir AMOLED (circle)",
+        "Version": "1.0"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            { "Name": "Vince Liuice", "Email": "vinceliuice@hotmail.com" },
+            { "Name": "ncarvalho99" }
+        ],
+        "Category": "Global Themes (Plasma 6)",
+        "Description": "Qogir dark with a pure black (AMOLED) palette",
+        "EnabledByDefault": true,
+        "Id": "com.github.ncarvalho99.Qogir-amoled",
+        "License": "GPLv3",
+        "Name": "Qogir AMOLED",
+        "ServiceTypes": ["Plasma/LookAndFeel"],
+        "Website": "https://github.com/ncarvalho99/qogir-amoled"
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+    "X-KDE-fallbackPackage": "org.kde.breezedark.desktop",
+    "X-Plasma-MainScript": "defaults",
+    "X-Plasma-APIVersion": "2"
+}

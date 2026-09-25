@@ -1,0 +1,18 @@
+{
+    "KPackageStructure": "Plasma/Theme",
+    "KPlugin": {
+        "Authors": [
+            { "Name": "Vinceliuice", "Email": "vinceliuice@hotmail.com" },
+            { "Name": "ncarvalho99" }
+        ],
+        "Category": "Plasma Theme",
+        "Description": "Qogir dark with a pure black (AMOLED) palette",
+        "EnabledByDefault": true,
+        "Id": "Qogir-amoled",
+        "License": "GPL 3.0",
+        "Name": "Qogir AMOLED",
+        "ServiceTypes": ["Plasma/Theme"],
+        "Version": "1.0",
+        "Website": "https://github.com/ncarvalho99/qogir-amoled"
+    }
+}

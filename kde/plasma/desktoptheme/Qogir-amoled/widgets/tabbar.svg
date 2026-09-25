@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="500"
+   height="500"
+   version="1.1"
+   id="svg84"
+   sodipodi:docname="tabbar.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview72"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.944"
+     inkscape:cx="182.73305"
+     inkscape:cy="271.7161"
+     inkscape:window-width="1920"
+     inkscape:window-height="1004"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg84" />
+  <metadata
+     id="metadata88">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3">
+    <style
+       id="current-color-scheme"
+       type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#f5f5f5;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#f5f5f5;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#5294e2;
+      }</style>
+  </defs>
+  <g
+     id="south-active-tab-top"
+     transform="translate(236,72.638)">
+    <rect
+       class="ColorScheme-Text"
+       x="40"
+       y="359.36"
+       width="80"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect6" />
+  </g>
+  <g
+     id="south-active-tab-topleft"
+     transform="translate(236,72.638)">
+    <rect
+       class="ColorScheme-Text"
+       x="30"
+       y="359.36"
+       width="10"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect9" />
+  </g>
+  <g
+     id="south-active-tab-topright"
+     transform="translate(236,72.638)">
+    <rect
+       class="ColorScheme-Text"
+       x="120"
+       y="359.36"
+       width="10"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect12" />
+  </g>
+  <rect
+     id="south-active-tab-left"
+     class="ColorScheme-Text"
+     x="266"
+     y="435"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="south-active-tab-center"
+     class="ColorScheme-Text"
+     x="276"
+     y="435"
+     width="80"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="south-active-tab-right"
+     class="ColorScheme-Text"
+     x="356"
+     y="435"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="south-active-tab-bottomright"
+     x="356"
+     y="449"
+     width="10"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="south-active-tab-bottom"
+     x="276"
+     y="449"
+     width="80"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="south-active-tab-bottomleft"
+     x="266"
+     y="449"
+     width="10"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="east-active-tab-bottom"
+     class="ColorScheme-Text"
+     transform="rotate(-90)"
+     x="-366"
+     y="408"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="east-active-tab-center"
+     class="ColorScheme-Text"
+     transform="rotate(-90)"
+     x="-356"
+     y="408"
+     width="80"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="east-active-tab-top"
+     class="ColorScheme-Text"
+     transform="rotate(-90)"
+     x="-276"
+     y="408"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="east-active-tab-topright"
+     transform="rotate(-90)"
+     x="-276"
+     y="421"
+     width="10"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="east-active-tab-right"
+     transform="rotate(-90)"
+     x="-356"
+     y="421"
+     width="80"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="east-active-tab-bottomright"
+     transform="rotate(-90)"
+     x="-366"
+     y="421"
+     width="10"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <g
+     id="east-active-tab-left"
+     transform="rotate(90,265.18,501.18)">
+    <rect
+       class="ColorScheme-Text"
+       x="40"
+       y="359.36"
+       width="80"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect33" />
+  </g>
+  <rect
+     id="west-active-tab-top"
+     class="ColorScheme-Text"
+     transform="rotate(90)"
+     x="266"
+     y="-216"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="west-active-tab-center"
+     class="ColorScheme-Text"
+     transform="rotate(90)"
+     x="276"
+     y="-216"
+     width="80"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="west-active-tab-bottom"
+     class="ColorScheme-Text"
+     transform="rotate(90)"
+     x="356"
+     y="-216"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="west-active-tab-bottomleft"
+     transform="rotate(90)"
+     x="356"
+     y="-202"
+     width="10"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="west-active-tab-left"
+     transform="rotate(90)"
+     x="276"
+     y="-202"
+     width="80"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <rect
+     id="west-active-tab-topleft"
+     transform="rotate(90)"
+     x="266"
+     y="-202"
+     width="10"
+     height="2"
+     class="ColorScheme-ButtonFocus"
+     fill="currentColor" />
+  <g
+     id="west-active-tab-right"
+     transform="rotate(90,171.68,407.68)">
+    <rect
+       class="ColorScheme-Text"
+       x="40"
+       y="359.36"
+       width="80"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect46" />
+  </g>
+  <g
+     id="west-active-tab-topright"
+     transform="rotate(90,171.68,407.68)">
+    <rect
+       class="ColorScheme-Text"
+       x="30"
+       y="359.36"
+       width="10"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect49" />
+  </g>
+  <g
+     id="west-active-tab-bottomright"
+     transform="rotate(90,171.68,407.68)">
+    <rect
+       class="ColorScheme-Text"
+       x="120"
+       y="359.36"
+       width="10"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect52" />
+  </g>
+  <rect
+     id="north-active-tab-right"
+     class="ColorScheme-Text"
+     transform="scale(-1)"
+     x="-373"
+     y="-226"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="north-active-tab-center"
+     class="ColorScheme-Text"
+     transform="scale(-1)"
+     x="-363"
+     y="-226"
+     width="80"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="north-active-tab-left"
+     class="ColorScheme-Text"
+     transform="scale(-1)"
+     x="-283"
+     y="-226"
+     width="10"
+     height="12"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="north-active-tab-topleft"
+     class="ColorScheme-Text"
+     transform="scale(-1)"
+     x="-283"
+     y="-214"
+     width="10"
+     height="4"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="north-active-tab-top"
+     class="ColorScheme-Text"
+     transform="scale(-1)"
+     x="-363"
+     y="-214"
+     width="80"
+     height="4"
+     fill="currentColor"
+     opacity=".1" />
+  <rect
+     id="north-active-tab-topright"
+     class="ColorScheme-Text"
+     transform="scale(-1)"
+     x="-373"
+     y="-214"
+     width="10"
+     height="4"
+     fill="currentColor"
+     opacity=".1" />
+  <g
+     id="north-active-tab-bottom"
+     transform="matrix(1 0 0 .66667 243 -12.573)">
+    <rect
+       class="ColorScheme-ButtonFocus"
+       x="40"
+       y="359.36"
+       width="80"
+       height="3"
+       fill="currentColor"
+       id="rect65" />
+  </g>
+  <g
+     id="north-active-tab-bottomleft"
+     transform="matrix(1 0 0 .66667 243 -12.573)">
+    <rect
+       x="30"
+       y="359.36"
+       width="10"
+       height="3"
+       class="ColorScheme-ButtonFocus"
+       fill="currentColor"
+       id="rect70" />
+  </g>
+  <g
+     id="north-active-tab-bottomright"
+     class="ColorScheme-Text"
+     transform="matrix(1 0 0 .66667 0 75.427)"
+     fill="currentColor">
+    <rect
+       x="363"
+       y="227.36"
+       width="10"
+       height="3"
+       opacity=".01"
+       id="rect73" />
+    <rect
+       x="363"
+       y="227.36"
+       width="10"
+       height="3"
+       class="ColorScheme-ButtonFocus"
+       fill="currentColor"
+       id="rect75" />
+  </g>
+  <g
+     id="east-active-tab-topleft"
+     transform="rotate(90,265.18,501.18)">
+    <rect
+       class="ColorScheme-Text"
+       x="30"
+       y="359.36"
+       width="10"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect78" />
+  </g>
+  <g
+     id="east-active-tab-bottomleft"
+     transform="rotate(90,265.18,501.18)">
+    <rect
+       class="ColorScheme-Text"
+       x="120"
+       y="359.36"
+       width="10"
+       height="3"
+       fill="currentColor"
+       opacity=".1"
+       id="rect81" />
+  </g>
+  <rect
+     y="465.7644"
+     x="-229.58237"
+     height="41.12067"
+     width="41.362885"
+     id="hint-tile-center"
+     style="opacity:0.875;fill:#008000;fill-opacity:1;stroke:none" />
+  <rect
+     y="435.99994"
+     x="270.24124"
+     height="5"
+     width="6"
+     id="south-active-tab-hint-left-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="south-active-tab-hint-right-margin"
+     width="6"
+     height="5"
+     x="364.24127"
+     y="435.99994" />
+  <rect
+     y="429.99994"
+     x="324.48248"
+     height="10"
+     width="5"
+     id="south-active-tab-hint-top-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1"
+     id="south-active-tab-hint-bottom-margin"
+     width="5"
+     height="10"
+     x="324.48248"
+     y="444.99994" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="east-active-tab-hint-bottom-margin"
+     width="6"
+     height="5"
+     x="-364.69861"
+     y="415.65656"
+     transform="rotate(-90)" />
+  <rect
+     y="415.65656"
+     x="-270.69861"
+     height="5"
+     width="6"
+     id="east-active-tab-hint-top-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="rotate(-90)" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="east-active-tab-hint-left-margin"
+     width="5"
+     height="8"
+     x="-310.4574"
+     y="408.65656"
+     transform="rotate(-90)" />
+  <rect
+     y="424.65656"
+     x="-310.4574"
+     height="4"
+     width="5"
+     id="east-active-tab-hint-right-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="rotate(-90)" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="west-active-tab-hint-top-margin"
+     width="6"
+     height="5"
+     x="265"
+     y="-217.24127"
+     transform="rotate(90)" />
+  <rect
+     y="-217.24127"
+     x="359"
+     height="5"
+     width="6"
+     id="west-active-tab-hint-bottom-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="rotate(90)" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="west-active-tab-hint-right-margin"
+     width="5"
+     height="8"
+     x="319.24121"
+     y="-224.24127"
+     transform="rotate(90)" />
+  <rect
+     y="-208.24127"
+     x="319.24121"
+     height="4"
+     width="5"
+     id="west-active-tab-hint-left-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="rotate(90)" />
+  <rect
+     y="-222"
+     x="-377.24127"
+     height="5"
+     width="6"
+     id="north-active-tab-hint-right-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     transform="scale(-1)" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="north-active-tab-hint-left-margin"
+     width="6"
+     height="5"
+     x="-283.24124"
+     y="-222"
+     transform="scale(-1)" />
+  <rect
+     y="-229"
+     x="-323"
+     height="10"
+     width="5"
+     id="north-active-tab-hint-bottom-margin"
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1"
+     transform="scale(-1)" />
+  <rect
+     style="fill:#4e9a06;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1"
+     id="north-active-tab-hint-top-margin"
+     width="5"
+     height="10"
+     x="-323"
+     y="-219"
+     transform="scale(-1)" />
+</svg>

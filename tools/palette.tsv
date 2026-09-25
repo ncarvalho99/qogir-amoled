@@ -1,0 +1,35 @@
+# Qogir dark -> AMOLED palette.
+# The first block is the mapping from the original 2022/2023 black edits
+# (ncarvalho99/qogir-black, ncarvalho99/Qogir-theme@9f0f93b). The second block
+# extends it to shades that only exist in the KDE assets (Kvantum, Aurorae,
+# color schemes), following the same idea: backgrounds go to (near) pure black,
+# borders and text stay untouched.
+#
+# qogir    amoled
+282a33	030303
+32343d	070707
+42444b	151515
+2c2f39	121213
+21232b	030303
+2b2e37	151515
+272931	030303
+21232a	121214
+383a44	121215
+2b2d35	101010
+464750	121212
+393c48	070707
+
+2e303a	0c0c0c
+3e404a	151515
+3d404b	151515
+42444f	151515
+404552	121212
+202128	030303
+1b1d24	000000
+22252e	050505
+474d5d	1c1c1c
+474d5b	1c1c1c
+484b5b	1c1c1c
+3a3d4a	141414
+323542	0f0f0f
+31353f	0f0f0f
