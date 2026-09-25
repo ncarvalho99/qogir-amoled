@@ -5,6 +5,7 @@ A pure black (AMOLED) edition of the [Qogir](https://github.com/vinceliuice/Qogi
 It continues [ncarvalho99/qogir-black](https://github.com/ncarvalho99/qogir-black) and [ncarvalho99/Qogir-theme](https://github.com/ncarvalho99/Qogir-theme) (2022–2023), which turned Qogir's GTK theme black but predate Plasma 6 and never covered the KDE side.
 
 ![Dolphin with Qogir AMOLED](images/dolphin.png)
+![Nautilus with the Qogir icon-strip sidebar](images/nautilus.png)
 ![GTK 4 / libadwaita dialog](images/gtk4.png)
 
 ## What's included
@@ -16,7 +17,7 @@ It continues [ncarvalho99/qogir-black](https://github.com/ncarvalho99/qogir-blac
 | Plasma style | Qogir AMOLED | Panel, popups and widgets follow the color scheme. |
 | Window decorations | Qogir AMOLED, Qogir AMOLED (circle) | Aurorae, Plasma 6 metadata included. |
 | Application style | Kvantum `Qogir-amoled` | Opaque black. `Qogir-amoled-translucent` keeps upstream's blur. |
-| GTK theme | `Qogir-Amoled-Dark` | GTK 2, 3, 4 and libadwaita apps. |
+| GTK theme | `Qogir-Amoled-Dark` | GTK 2, 3, 4 and libadwaita apps. Includes Qogir's Nautilus look (see below). |
 | Icons and cursors | `Qogir-Dark` | Downloaded from upstream [Qogir-icon-theme](https://github.com/vinceliuice/Qogir-icon-theme). |
 | Top panel | Qogir AMOLED Top Panel | Qogir's top bar: launcher, global menu, tray, split clock, search. Add it from *Add Panel*, or tick *Desktop and window layout* when applying the global theme (that replaces your panels). |
 | Clock widget | Split Digital Clock | Plasma 6 rewrite of Qogir's date \| time clock, with the Plasma calendar in its popup. |
@@ -66,6 +67,12 @@ Accent colors, text and borders are left untouched.
 - The split clock was rewritten for Plasma 6 (upstream's is Plasma 5 only). Multiple time zones were dropped; use Plasma's Digital Clock for those.
 - GTK 4 / libadwaita theming imports the theme from `~/.config/gtk-4.0/gtk.css` instead of symlinking over the file Plasma manages.
 
+## Nautilus
+
+Qogir's signature file manager look (the dark icon strip down the sidebar, the blue square and dot on the selected place, the mountain logo, the mountains in the corner of the view) was written for Nautilus' old sidebar and stopped applying when Nautilus rebuilt it as a plain list. [`gtk-amoled/_nautilus.scss`](gtk-amoled/_nautilus.scss) restores it for Nautilus 48+, and the corner mountains get an AMOLED version with a transparent background (upstream's dark one is an opaque `#282a33` block).
+
+Dolphin can't be styled this way: Qt styles like Kvantum have no hook for a sidebar icon column or a view background image.
+
 ## Login screen
 
 Plasma 6 distributions increasingly ship **Plasma Login Manager** instead of SDDM. It has no themes of its own: the greeter runs as the `plasmalogin` user and uses that user's color scheme, Plasma style, icons and cursor, plus a wallpaper set in `/etc/plasmalogin.conf`. `--login` installs those pieces to `/usr/local/share`, points the greeter at them, and keeps a backup in `/var/lib/qogir-amoled/login-backup` for `--uninstall --login`.
@@ -82,17 +89,11 @@ Not ported: upstream's `win7showdesktop` plasmoid (Plasma 5 only; Plasma 6 ships
 git clone --depth 1 https://github.com/vinceliuice/Qogir-theme /tmp/Qogir-theme
 git clone --depth 1 https://github.com/vinceliuice/Qogir-kde /tmp/Qogir-kde
 
-# GTK: copy upstream, recolor the SASS palette, regenerate the CSS (needs sassc)
-rsync -a --delete --exclude .git --exclude release /tmp/Qogir-theme/ gtk/
-tools/amoledify.py gtk/src/_sass/_colors.scss gtk/src/gtk-2.0/theme*/gtkrc-Dark
-(cd gtk && ./parse-sass.sh && rm -f src/_sass/_tweaks-temp.scss)
-git -C /tmp/Qogir-theme rev-parse HEAD > gtk/UPSTREAM_COMMIT
-
-# KDE
+tools/build-gtk.sh /tmp/Qogir-theme   # needs sassc
 tools/build-kde.sh /tmp/Qogir-kde
 ```
 
-The upstream commits currently used are in `gtk/UPSTREAM_COMMIT` and `kde/UPSTREAM_COMMIT`.
+The upstream commits currently used are in `gtk/UPSTREAM_COMMIT` and `kde/UPSTREAM_COMMIT`. Hand-written parts live outside those folders: `gtk-amoled/` (Nautilus sidebar and assets), `plasma/` (clock, panel template, desktop layout) and `login/`.
 
 ## Credits and license
 

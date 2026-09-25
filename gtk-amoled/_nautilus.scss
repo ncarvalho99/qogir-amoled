@@ -1,0 +1,106 @@
+// Qogir's dark icon-strip sidebar for Nautilus 48+.
+//
+// Upstream styles `row.sidebar-row` / `.sidebar-icon` / `.sidebar-label`, which
+// Nautilus dropped when its sidebar became a plain GtkListBox:
+//   placessidebar > scrolledwindow > viewport > list.navigation-sidebar
+//     > row > revealer.sidebar-revealer > box > image, label, ...
+// Without this the rows get libadwaita's rounded, indented style and the icons
+// sit off the 38px strip. Imported last, so it wins over upstream's rules.
+
+$_strip_width: 38px;
+$_icon_size: 16px;
+$_icon_margin: ($_strip_width - $_icon_size) / 2;
+$_dot_position: $_strip_width + 4px; // matches upstream's GTK 3 layout
+
+// On black the upstream strip (#070707 on #030303) disappears; lift it just
+// enough to read as a separate column.
+$_strip_bg: if($variant == 'dark', #101010, $dark_sidebar_icon_bg);
+
+.nautilus-window {
+  .sidebar-pane > toolbarview {
+    background-image: image($_strip_bg);
+  }
+
+  .sidebar-pane headerbar {
+    background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg")), image($_strip_bg);
+
+    &, &:backdrop {
+      box-shadow: inset 0 -1px $_strip_bg, inset $_strip_width 0 0 0 transparent;
+    }
+  }
+
+  placessidebar list.navigation-sidebar {
+    padding: 0;
+    background: none;
+
+    > separator {
+      background: none;
+      min-height: 6px;
+    }
+
+    > row {
+      margin: 0;
+      padding: 2px 0;
+      min-height: 30px;
+      border-radius: 0;
+      color: $dark_sidebar_fg;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      transition: none;
+
+      > revealer { padding: 0; } // upstream adds 10px here, pushing icons off the strip
+
+      > revealer > box {
+        > image:first-child {
+          min-width: $_icon_size;
+          margin: 0 ($_icon_margin + 14px) 0 $_icon_margin;
+          color: transparentize($dark_sidebar_icon_fg, 0.15);
+        }
+
+        > label { padding: 0 2px; }
+      }
+
+      &:hover:not(:selected) {
+        color: $fg_color;
+        background-color: transparentize($dark_sidebar_fg, 0.95);
+        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                    inset $_strip_width 0 0 0 $_strip_bg;
+      }
+
+      &:selected, &:selected:hover, &:active:hover {
+        background-color: transparent;
+        background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
+        background-position: $_dot_position center;
+        box-shadow: inset $_strip_width 0 0 0 $selected_bg_color;
+
+        > revealer > box {
+          > image:first-child { color: $selected_fg_color; }
+          > label { color: $alt_dark_sidebar_fg; }
+        }
+      }
+
+      &:selected:hover, &:active:hover {
+        background-color: transparentize($dark_sidebar_fg, 0.95);
+        box-shadow: inset -2px 0 lighten($selected_bg_color, 10%),
+                    inset $_strip_width 0 0 0 $selected_bg_color;
+      }
+
+      &:disabled {
+        &, label, image { color: transparentize($dark_sidebar_fg, 0.6); }
+      }
+
+      &:backdrop { opacity: 0.75; }
+    }
+  }
+
+  // Qogir's mountains in the corner of the icon view. The upstream dark image
+  // has an opaque #282a33 background, so the AMOLED variant ships its own with
+  // a transparent one.
+  .nautilus-grid-view gridview {
+    background-image: if($variant == 'dark',
+      -gtk-scaled(url("assets/backimage-amoled.png"), url("assets/backimage-amoled@2.png")),
+      -gtk-scaled(url("assets/backimage.png"), url("assets/backimage@2.png")));
+    background-repeat: no-repeat;
+    background-position: bottom right;
+  }
+}

@@ -8790,3 +8790,89 @@ dialog-host > dialog.osd:not(progressbar):not(button):not(menubutton):not(splitb
 @define-color BLACK_500 #393634;
 @define-color BLACK_700 #33302F;
 @define-color BLACK_900 #2B2928;
+.nautilus-window .sidebar-pane > toolbarview {
+  background-image: image(#070707);
+}
+
+.nautilus-window .sidebar-pane headerbar {
+  background-image: -gtk-scaled(url("assets/logo.svg"), url("assets/logo@2.svg")), image(#070707);
+}
+
+.nautilus-window .sidebar-pane headerbar, .nautilus-window .sidebar-pane headerbar:backdrop {
+  box-shadow: inset 0 -1px #070707, inset 38px 0 0 0 transparent;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar {
+  padding: 0;
+  background: none;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > separator {
+  background: none;
+  min-height: 6px;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row {
+  margin: 0;
+  padding: 2px 0;
+  min-height: 30px;
+  border-radius: 0;
+  color: #d8dedf;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  transition: none;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row > revealer {
+  padding: 0;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row > revealer > box > image:first-child {
+  min-width: 16px;
+  margin: 0 25px 0 11px;
+  color: rgba(246, 246, 251, 0.85);
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row > revealer > box > label {
+  padding: 0 2px;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:hover:not(:selected) {
+  color: #464853;
+  background-color: rgba(216, 222, 223, 0.05);
+  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #070707;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:selected, .nautilus-window placessidebar list.navigation-sidebar > row:selected:hover, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover {
+  background-color: transparent;
+  background-image: -gtk-scaled(url("assets/selected-dot.png"), url("assets/selected-dot@2.png"));
+  background-position: 42px center;
+  box-shadow: inset 38px 0 0 0 #5294e2;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:selected > revealer > box > image:first-child, .nautilus-window placessidebar list.navigation-sidebar > row:selected:hover > revealer > box > image:first-child, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover > revealer > box > image:first-child {
+  color: #ffffff;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:selected > revealer > box > label, .nautilus-window placessidebar list.navigation-sidebar > row:selected:hover > revealer > box > label, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover > revealer > box > label {
+  color: #bcc6c8;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:selected:hover, .nautilus-window placessidebar list.navigation-sidebar > row:active:hover {
+  background-color: rgba(216, 222, 223, 0.05);
+  box-shadow: inset -2px 0 #7eafe9, inset 38px 0 0 0 #5294e2;
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:disabled, .nautilus-window placessidebar list.navigation-sidebar > row:disabled label, .nautilus-window placessidebar list.navigation-sidebar > row:disabled image {
+  color: rgba(216, 222, 223, 0.4);
+}
+
+.nautilus-window placessidebar list.navigation-sidebar > row:backdrop {
+  opacity: 0.75;
+}
+
+.nautilus-window .nautilus-grid-view gridview {
+  background-image: -gtk-scaled(url("assets/backimage.png"), url("assets/backimage@2.png"));
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
